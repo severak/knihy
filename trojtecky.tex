@@ -17,8 +17,16 @@
    [chapter]
    [header=chapter,page=no,command=\green\iwona,number=no]
 
+\def\citat #1#2{
+{\it
+#1
+\blank[1*halfline]
+\rightaligned{#2}
+}}
+
 %%% Odstavce %%%
 \setupindenting[yes, small,first]
+\setupheads[indentnext=yes]
 
 %%% Záložky pdf %%%
 \placebookmarks[chapter,section,subsection][force=yes]
@@ -32,17 +40,44 @@
 \definecolor[indigo][r=.0, g=.0, b=.5]
 \definecolor[green][r=0, g=0.5, b=0]
 
+
+
 \starttext
+\startTEXpage
+    \externalfigure[trojtecky-titul.pdf][page=1]
+\stopTEXpage
 
 \startstandardmakeup
-\externalfigure[down][method=png]
-
-{\rm \sc Mikoláš Štrajt}
-
-\title{Trojtečky...}
-
-{\rm \sc edice Pantograf}
+{\sc \rm Mikoláš Štrajt}
+\title{Trojtečky}
+\placecontent
 \stopstandardmakeup
+\page
+
+\chapter{Úvodem}
+
+Psaní detektivek nepatří mezi nejlehčí činnosti kterými ztrácím volný čas.
+
+Kromě věcí na které jsem zvyklý z povídek (pravopis, jednota nálady, nezapomenout něco důležitého) je třeba dát pozor i na uvažování detektivů, pohnutky podezdřelých, napínání čtenářů a celkovou uvěřitelnost. Jo a taky neporušovat pravidla pátera Knoxe.
+
+Z toho plyne že dokončit detektivku není lehký úkol. Ale i ty rozepsané v sobě mají věty, které se mi povedly.
+
+'spoň doufám...
+
+Tímto spiskem bych vás tedy nechal nahlédnout do své, prachmaticky řečeno, vysoké pece.
+
+Některé příběhy časem dopíšu, jiné zůstanou s trojtečkou na konci na vždy.
+
+To už záleží jen na mě.
+
+A na Vás...
+
+\rightaligned{Severák}
+
+\blank[3*line]
+
+\citat{V tomto šerosvitu, v němž už nikdo neví, kdo je kdo, se lidé cítí cize, a to nejen ve světě, ale také mezi sebou navzájem. A v náladě cizoty a osamělosti dostávají mezi lidmi svou příležitost postavy cizinců, světci a zločinci.}{Hannah Arendtová: Vita activa aneb o činném životě}
+
 \page
 
 \chapter{KOLDOM}
@@ -85,11 +120,32 @@ Paní Macková seděla ve vrátnici....
 
 \chapter{Dvojí život Áni Kellerové}
 
-Áňa Kellerová ztratila pas. To se tak občas stává, problém byl v tom že ho ztratila na cestách. A to by se lidem stávat nemělo.
+Áňa Kellerová\footnote{Než se zeptáte: ano, mám na to povolení od Áni, dokonce mě povzbuzovala ať to dopíšu...} ztratila pas. To se tak občas stává, problém byl v tom že ho ztratila na cestách. A to by se lidem stávat nemělo.
 
 Byl krásný letní večer. Áňa ležela v trávě v ruce láhev vína, v hlavě tisíc zvonečků. Takový ten okamžik kdy je člověku smutno, a veselo zárověň. Vzduchem se nesl smích smíchaný s hudbou.
 
 Tento příběh však není o Áně. Je jen o jejím jméně, fotografii, datu narození a bydlišti. Hlavním hrdinou tohoto příběhu je totiž její cestovní pas{\indigo ...}
 
+\page
+
+\chapter{Čas lovu}
+
+...
+
+\chapter{Na počest hrdinům}
+
+...
+
+\chapter{Sokolí hnízdo}
+
+...
+
+\chapter{Problém tří těles}
+
+...
+
+\chapter{Pískáček}
+
+...
 
 \stoptext
