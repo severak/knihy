@@ -1,0 +1,56 @@
+\setupoutput
+   [pdftex]
+\enableregime
+   [utf]
+\definetypeface[iwona][ss][sans][kurier][default]
+\usetypescript
+   [modern][ec]
+\setupbodyfont
+   [ss,10pt]
+\mainlanguage
+   [cz]
+\setuppapersize
+   [A4][A4]
+\setupcolors
+   [state=start]
+\setuppagenumbering
+   [location={footer,middle}]
+
+\setuphead
+   [chapter]
+   [header=chapter,page=no,command=\grave\iwona,number=no]
+
+%%% Odstavce %%%
+\setupindenting[yes, small,first]
+
+%%% Záložky pdf %%%
+\placebookmarks[chapter,section,subsection][force=yes]
+\setupinteractionscreen[option=bookmark]
+\setupinteraction[state=start,
+  title={Sokolí hnízdo},
+  author={Mikolas Strajt}]
+\setuplist[chapter][interaction=text,color=indigo]
+
+%%% COLORS %%%
+\definecolor
+   [indigo]
+   [r=.0, g=.0, b=.5]
+\definecolor
+   [grave]
+   [r=.5, g=.5, b=.5]
+
+
+\starttext
+
+\startstandardmakeup
+{\sc \rm Mikoláš Štrajt}
+\title{Sokolí hnízdo}
+\stopstandardmakeup
+
+{\it Věnováno těm kteří přispěli ke vzniku této povídky, ať už přímo nebo nepřímo. Jmenovitě pak Romanu Novosádovi za popohánění k dopsání.}
+
+Bylo zataženo a dusno. Zahřmělo. Nad městem se spustil...
+
+
+
+\stoptext
