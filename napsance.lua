@@ -26,6 +26,19 @@ function skupina(match)
 	return text
 end
 
+function poznamky()
+	local max=0
+	for num,text in ipairs(footnotes) do
+		push(out, string.format("[%d] : %s", num, text))
+		max=num
+	end 
+	if max>0 then
+		for i=1,max do
+			table.remove(footnotes)
+		end
+	end
+end
+
 for line in io.lines(zpracuj) do
 	if vtextu then
 		if string.byte(line)==BACKSLASH then
@@ -35,6 +48,11 @@ for line in io.lines(zpracuj) do
 				for i=1,kolik do
 					push(out, "")
 				end
+			elseif string.match(line, "\\chapter{.*}") then
+				local chapname = string.match(line, "\\chapter{(.*)}")
+				poznamky()
+				push(out, '')
+				push(out, '[u]'.. chapname ..'[/u]')
 			end
 		elseif string.match(line, "^%s*$") then
 			whitelines = whitelines + 1
@@ -58,6 +76,3 @@ for i,line in ipairs(out) do
 	print(line)
 end
 
-for num,text in ipairs(footnotes) do
-	print(string.format("[%d] : %s", num, text))
-end
